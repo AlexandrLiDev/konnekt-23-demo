@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Разбор карточек «Коннект 23»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;800&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--lime:#7AC143;--green:#2F8F3A;--mint:#EAF5E1;--ink:#111512;--paper:#F4F6F1;--card:#fff;--muted:#5E665F;--line:#DDE3D8;--ok:#2F8F3A;--warn:#B87300;--bad:#C9372C}
+*{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:clip}
+body{font-family:"Golos Text",system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:clip}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Exo 2",sans-serif;font-weight:800;letter-spacing:-.01em;line-height:1.1}
+a{color:inherit}
+.top{background:var(--ink);color:#c8d0c4;font-size:13px;padding:9px 0}
+.top a{color:var(--lime);font-weight:600}
+header.hero{padding:48px 0 30px}
+.kicker{font-family:"JetBrains Mono",monospace;font-size:12.5px;font-weight:500;color:var(--green)}
+header h1{font-size:clamp(30px,5vw,48px);margin:12px 0 14px}
+header h1 span{color:var(--green)}
+header p{font-size:18px;color:#363c37;max-width:62ch}
+.score{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:30px 0 8px}
+.sc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.sc b{display:block;font-family:"Exo 2";font-size:32px;margin:4px 0}
+.sc small{color:var(--muted)}
+.sc.bad b{color:var(--bad)}.sc.ok b{color:var(--ok)}
+.compare{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:26px 0}
+.compare table{width:100%;border-collapse:collapse;font-size:15px}
+.compare th,.compare td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.compare th{background:#F8FAF5;font-weight:600;font-size:13px;font-family:"JetBrains Mono";color:var(--muted)}
+.compare tr:last-child td{border-bottom:0}
+.y{color:var(--ok);font-weight:600}.n{color:var(--bad);font-weight:600}
+h2{font-size:28px;margin:44px 0 16px}
+.find{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-bottom:12px;display:grid;grid-template-columns:auto 1fr;gap:8px 16px}
+.find>*:not(.num){grid-column:2;min-width:0}
+.num{grid-column:1;grid-row:1/span 9;width:38px;height:38px;border-radius:10px;background:var(--ink);color:var(--lime);display:grid;place-items:center;font-family:"JetBrains Mono";font-weight:700;font-size:15px}
+.find h3{font-size:19px;line-height:1.3;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.tag{font-family:"Golos Text";font-size:12px;font-weight:600;padding:3px 9px;border-radius:99px}
+.tag.hi{background:#FBE5E3;color:var(--bad)}.tag.mid{background:#FFF1D6;color:var(--warn)}.tag.lo{background:#EEF1EA;color:#55605a}
+.find p{color:#363c37}
+.find q{font-style:italic}
+.fix{background:var(--mint);border-radius:10px;padding:10px 12px;font-size:15px}
+.fix b{color:var(--ok)}
+.shot{display:block;border-radius:12px;border:1px solid var(--line);width:100%;max-width:380px;height:auto}
+.offer{background:var(--ink);color:#e9eee6;border-radius:22px;padding:30px;margin:44px 0 20px;border-top:6px solid var(--lime)}
+.offer h2{margin:0 0 12px;color:#fff}
+.offer ul{list-style:none;display:grid;gap:8px;margin:14px 0 20px}
+.offer li{padding-left:26px;position:relative}
+.offer li:before{content:"";position:absolute;left:0;top:7px;width:14px;height:14px;border-radius:4px;background:var(--lime)}
+.offer a{color:var(--lime)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:999px;font-weight:600;text-decoration:none;background:var(--lime);color:var(--ink)!important}
+.btn.o{background:transparent;border:2px solid #fff;color:#fff!important}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+footer{padding:20px 0 50px;color:var(--muted);font-size:14px}
+@media (max-width:640px){.wrap{padding:0 16px}.score{grid-template-columns:1fr}.find{grid-template-columns:1fr}.find>*:not(.num){grid-column:1}.num{grid-row:auto}.compare{overflow-x:auto}.compare table{min-width:540px}.offer{padding:22px 18px}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">Разбор подготовил Александр Ли для «Коннект 23», 28 октября 2026 · <a href="index.html">Концепт сайта →</a></div></div>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">Коннект 23 · ул. им. 40-летия Победы, 186 к1</span>
+  <h1>Клиенты пишут «честный мастер», <span>а карты показывают рекламу соседей</span></h1>
+  <p>Посмотрел, как сервис выглядит в 2ГИС и Яндекс Картах. Отзывы отличные, но в карточках разные графики, цены 2023 года и почти нет ответов. А прямо под вашим адресом висит реклама сетевого сервиса «ремонт за 20 минут». Всё ниже исправляется за неделю, и почти всё бесплатно.</p>
+  <div class="score">
+    <div class="sc ok"><small>Рейтинг в 2ГИС</small><b>4,8</b><small>35 оценок, 25 отзывов</small></div>
+    <div class="sc bad"><small>Ответов на отзывы</small><b>2 из 44</b><small>1 в 2ГИС и 1 в Яндексе</small></div>
+    <div class="sc bad"><small>Цены в 2ГИС обновлены</small><b>2023</b><small>25 мая, три с половиной года назад</small></div>
+  </div>
+</div></header>
+
+<main class="wrap">
+  <div class="compare"><table>
+    <tr><th></th><th>2ГИС</th><th>Яндекс Карты</th></tr>
+    <tr><td>Рейтинг</td><td>4,8 · 35 оценок, 25 отзывов</td><td>4,7 · 29 оценок, 19 отзывов</td></tr>
+    <tr><td>Статус карточки</td><td class="n">«Компания давно не обновляла данные»</td><td class="y">Подтверждена, но у цен «Давно не обновлялось»</td></tr>
+    <tr><td>Часы работы</td><td>Пн–Сб 9:00–19:00 без перерыва, «по предварительному звонку»</td><td class="n">Пн–Сб 9:00–19:00, перерыв 13:00–14:00</td></tr>
+    <tr><td>Оплата</td><td>Наличные, перевод</td><td class="n">Только наличные</td></tr>
+    <tr><td>Ключ для домофона</td><td>200 ₽</td><td class="n">150 ₽</td></tr>
+    <tr><td>Ответы на отзывы</td><td class="n">1 из 25</td><td class="n">1 из 19</td></tr>
+    <tr><td>Сайт</td><td class="n">Нет</td><td class="n">Только бесплатный шаблон Яндекса</td></tr>
+  </table></div>
+
+  <h2>Что нашёл</h2>
+
+  <div class="find"><span class="num">1</span>
+    <h3>На вашей карточке рекламируются конкуренты <span class="tag hi">важно</span></h3>
+    <p>В 2ГИС прямо под вашим адресом и телефоном стоит блок «Похожие организации» с рекламой: <q>Сервис Pedant.ru. Ремонт смартфонов от 490 руб. При вас за 20 минут. 100%-ная гарантия!</q> и кнопкой «Узнать цену за 1 минуту». Рядом «Элит класс» с ключами. В Яндексе в «Похожих местах» первым идёт «ЭтоСервис» с промо <q>Ремонт за 23 минуты! Диагностика 0 руб.</q></p>
+    <p>Человек открыл вашу карточку, увидел, что у вас цены 2023 года и нет ни слова про сроки, а у соседа «за 20 минут с гарантией». Решение принимается за секунды.</p>
+    <div class="fix"><b>Что сделать:</b> заполнить карточку так, чтобы она отвечала на те же вопросы: цена по поломке, срок, гарантия. Это бесплатно. В платных пакетах 2ГИС можно убрать чужую рекламу со своей карточки, цену стоит уточнить отдельно.</div>
+  </div>
+
+  <div class="find"><span class="num">2</span>
+    <h3>В 2ГИС и Яндексе разные графики, и единственная плохая оценка как раз про это <span class="tag hi">важно</span></h3>
+    <p>В 2ГИС: 9:00–19:00 без перерыва и приписка «по предварительному звонку». В Яндексе: перерыв с 13:00 до 14:00. На двери просто «9–19». Единственный отзыв на 1 звезду в 2ГИС: <q>Пришёл, закрыто на обед? Обеда нет в режиме работы...</q>. Вы ответили, что обеда нет, но иногда нужно отъехать. Человек этого заранее знать не мог.</p>
+    <img class="shot" src="img/door.jpg" alt="Дверь сервиса с режимом работы 9–19" loading="lazy">
+    <div class="fix"><b>Что сделать:</b> один график везде: дверь, 2ГИС, Яндекс, сайт. Если мастер иногда отъезжает, честно написать «перед визитом лучше позвонить» и дать кнопку MAX, чтобы спросить за 10 секунд.</div>
+  </div>
+
+  <div class="find"><span class="num">3</span>
+    <h3>2ГИС пишет каждому: «Компания давно не обновляла данные» <span class="tag hi">важно</span></h3>
+    <p>Эту строку видит каждый, кто открывает карточку. В разделе «Актуальность данных» стоит «не подтверждена». Прайс в 2ГИС последний раз обновлялся 25 мая 2023 года. Человек с разбитым телефоном читает это как «может, уже не работают» и звонит соседям.</p>
+    <div class="fix"><b>Что сделать:</b> зайти в личный кабинет 2ГИС («Это моя компания») и подтвердить данные. Бесплатно, 10 минут.</div>
+  </div>
+
+  <div class="find"><span class="num">4</span>
+    <h3>2 ответа на 44 отзыва <span class="tag mid">заметно</span></h3>
+    <p>Люди пишут <q>очень честный мастер</q>, <q>спасли утонувший телефон</q>, <q>официальный сервис отказал в ремонте</q> (и здесь починили). В 2ГИС отвечен 1 отзыв из 25, и это ответ на жалобу, в Яндексе 1 из 19. Все благодарности в 2ГИС остаются без ответа, а карты охотнее поднимают тех, кто отвечает.</p>
+    <div class="fix"><b>Что сделать:</b> коротко ответить на все отзывы и дальше отвечать на новые. 15 минут в неделю, могу взять это на себя.</div>
+  </div>
+
+  <div class="find"><span class="num">5</span>
+    <h3>Для 2ГИС вы в первую очередь мастерская ключей <span class="tag mid">заметно</span></h3>
+    <p>Заголовок вашей страницы в 2ГИС: «Коннект 23, сервисный центр, Изготовление дубликатов ключей». Первая рубрика тоже «Изготовление ключей». Поэтому все шесть вопросов в блоке «Вопросы о месте» про ключи: <q>Делают автоключи с чипом?</q>, <q>Есть выезд для вскрытия дверей?</q>. Отвечает на них ИИ-помощник, не вы. Рубрик для ноутбуков, приставок, телевизоров и печати нет, хотя всё это написано на вашей витрине и есть в прайсе.</p>
+    <img class="shot" src="img/front.jpg" alt="Витрина с перечнем услуг" loading="lazy">
+    <div class="fix"><b>Что сделать:</b> первой рубрикой поставить «Ремонт телефонов», добавить «Ремонт ноутбуков», «Ремонт игровых приставок», «Ремонт телевизоров», «Ксерокопирование и печать».</div>
+  </div>
+
+  <div class="find"><span class="num">6</span>
+    <h3>Цены в карточках разные и старые <span class="tag mid">заметно</span></h3>
+    <p>Ключ для домофона в 2ГИС 200 ₽, в Яндексе 150 ₽. Оплата в 2ГИС «наличные и перевод», в Яндексе «только наличными». Ремонт телефонов в 2ГИС это три строки без моделей: «Замена экрана от 1 000 ₽». Человек с конкретным iPhone не понимает, сколько это будет у него, и идёт к тем, кто пишет точнее.</p>
+    <div class="fix"><b>Что сделать:</b> один прайс на 15–20 строк «поломка → модель → цена от → срок», одинаковый в 2ГИС, Яндексе и на сайте.</div>
+  </div>
+
+  <div class="find"><span class="num">7</span>
+    <h3>Вместо сайта шаблон Яндекса с мусором в каталоге <span class="tag lo">просто</span></h3>
+    <p>У вас есть бесплатная страница konnekt-23.clients.site. В её каталоге есть раздел «Коннов» без товаров, цены те же, что в Яндексе, а для связи Viber и WhatsApp. Из 2ГИС на неё ссылки нет, и в контактах Яндекс Карт я её тоже не нашёл.</p>
+    <div class="fix"><b>Что сделать:</b> нормальный сайт с ценами по поломкам и кнопкой «прислать фото поломки», ссылка на него из обеих карточек. <a href="index.html">Вот как он может выглядеть</a>.</div>
+  </div>
+
+  <div class="find"><span class="num">8</span>
+    <h3>В Яндексе в 8 раз меньше оценок, чем у конкурентов <span class="tag lo">просто</span></h3>
+    <p>У вас 29 оценок. В «Похожих местах» на вашей карточке: «ЭтоСервис» 5,0 и 236 оценок, «Честный мастер» на Яцкова 5,0 и 234 оценки, у обоих значок «Хорошее место 2026». Клиенты вами довольны, их просто никто не просит оставить отзыв.</p>
+    <div class="fix"><b>Что сделать:</b> QR-код на стойке «Оцените нас в Яндексе» и короткая просьба, когда отдаёте телефон. Обычно это 5–10 новых отзывов в месяц.</div>
+  </div>
+
+  <div class="find"><span class="num">9</span>
+    <h3>Фото: одно внутри, много картинок из интернета <span class="tag lo">просто</span></h3>
+    <p>В 2ГИС 34 фото: 7 снаружи, 1 внутри, 26 в разделе «Товары». Часть из них похожа на рекламные картинки, а не на ваши работы. При этом у вас есть отличные свои фото: мастер за паяльной станцией, экран «было и стало» с вашей визиткой, рабочее место с приборами.</p>
+    <img class="shot" src="img/before-after.jpg" alt="Разбитый и новый экран с визиткой Коннект 23" loading="lazy">
+    <div class="fix"><b>Что сделать:</b> первыми поставить вход, мастера и 5–6 настоящих работ «до и после». Рекламные картинки убрать.</div>
+  </div>
+
+  <div class="offer">
+    <h2>Что предлагаю</h2>
+    <p>Беру на себя всё из списка, от вас нужно только подтвердить карточки по коду из СМС.</p>
+    <ul>
+      <li>Подтвердить карточку в 2ГИС, обновить обе карточки: один график, рубрики, одинаковые цены и способы оплаты</li>
+      <li>Ответить на все отзывы и дальше отвечать на новые</li>
+      <li>Поставить хорошие фото: вход, мастер, работы «до и после»</li>
+      <li>Сайт со ссылкой из обеих карточек: <a href="index.html">вот концепт</a></li>
+      <li>Раз в месяц отчёт: сколько людей посмотрели карточку, позвонили и построили маршрут</li>
+    </ul>
+    <p style="margin-bottom:18px">Разбор бесплатный. Стоимость работ обсудим, она небольшая.</p>
+    <div class="btns">
+      <a class="btn" href="https://t.me/DezmontDeXa" target="_blank" rel="noopener">Написать в Telegram</a>
+      <a class="btn o" href="tel:+79147765705">+7 914 776-57-05</a>
+    </div>
+  </div>
+</main>
+<footer><div class="wrap">Данные из открытых карточек 2ГИС, Яндекс Карт и страницы konnekt-23.clients.site на 28 октября 2026. Фото из карточки 2ГИС. Александр Ли.</div></footer>
+</body>
+</html>
